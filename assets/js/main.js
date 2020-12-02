@@ -87,7 +87,7 @@ window.addEventListener("load", function()
     for(let i = 0; i < liTag.length; i++)
     {
         let li = liTag[i];
-        let a = aTag[i]; //Obrati paznju da li ce ovo a da se prenese na druge
+        let a = aTag[i];
         
         liTag[i].addEventListener("click", function()
         {
@@ -182,7 +182,6 @@ window.addEventListener("load", function()
     h3.innerText = "Explore our shop";
     document.getElementById("parallax").appendChild(h3);
 
-
     var niz = new Array(3);
     niz[0] = "Staklenac";
     niz[1] = "Toceni";
@@ -195,29 +194,20 @@ window.addEventListener("load", function()
     {
         if((i == 0) || (i == 2))
         {
-            ispis += `<div class="col-4 overflow-hidden">
-                        <img src="assets/img/${niz[i]}.png" alt="${niz[i]}" class="img-fluid"/>
+            ispis += `<div id="hover${i}" class="col-4 overflow-hidden">
+                        <img src="assets/img/${niz[i]}.png" alt="${niz[i]}" class="img-fluid hover"/>
                     </div>`;
         }
         else
         {
-            ispis += `<div class="col-4 border-left border-right overflow-hidden">
-                        <img src="assets/img/${niz[i]}.png" alt="${niz[i]}" class="img-fluid"/>
+            ispis += `<div id="hover${i}" class="col-4 border-left border-right overflow-hidden">
+                        <img src="assets/img/${niz[i]}.png" alt="${niz[i]}" class="img-fluid hover"/>
                     </div>`;
         }
     }
     beerChoice.innerHTML += ispis;
     // console.log(ispis);
     // console.log(beerChoice);
-
-    var search = document.getElementById("search");
-    search.addEventListener("input", () => 
-    {
-        let vrednost = search.value.toLowerCase(); //Ovako radi
-        vrednost.toLowerCase(); //Ovako kad imam ne radi
-        // console.log(vrednost);
-    });
-
 
     var quotesArr = ["Pivo treba piti, svaki dan.", "Pivo je nije alkohol.", "Ko pije pivo, unece vitamin D.", "Od svih piva, BIP je najbolje.", "Opasno se drogiram, al to nije vazno", "Droga je najboja osobina.", "Citat 1", "Citat 2", "Citat 3", "Citar 4"];
     var authorQuoteArr = ["Albert Ajnstajn", "Nikola Tesla", "Aleksandar Vucic", "Neznani junak", "Pera Peric", "Mika Mikic", "Zika Zikic", "Seka Sekic", "Paja Patak", "Miki Maus"];
@@ -229,7 +219,296 @@ window.addEventListener("load", function()
     function getQuote()
     {
         randomNum = Math.floor(Math.random() * quotesArr.length);
-        console.log(randomNum);
+        // console.log(randomNum);
         quotes.innerHTML = `<p class="ml-3 pt-3 pb-3">"${quotesArr[randomNum]}"</p><p class="ml-3 pt-3 pb-3">- ${authorQuoteArr[randomNum]}</p>`;
     }
+
+    //Adding store
+
+    var beers =
+    [
+        {
+            id: "pivo1",
+            beerName:"Argus",
+            typeBeer:"Bottle",
+            price: 45,
+            img:
+            {
+                src:"assets/img/store/argus.jpg",
+                alt:"Argus beer"
+            }
+        },
+        {
+            id: "pivo2",
+            beerName:"Bip",
+            typeBeer:"Bottle",
+            price: 70,
+            img:
+            {
+                src:"assets/img/store/bip.jpg",
+                alt:"BIP beer"
+            }
+        },
+        {
+            id: "pivo3",
+            beerName:"Dilemma - IPA",
+            typeBeer:"Craft",
+            price: 250,
+            img:
+            {
+                src:"assets/img/store/dilemma-ipa.jpg",
+                alt:"Dilemma - IPA"
+            }
+        },
+        {
+            id: "pivo4",
+            beerName:"Dilemma - ALE",
+            typeBeer:"Craft",
+            price: 250,
+            img:
+            {
+                src:"assets/img/store/dilemma-spring-ale.jpg",
+                alt:"Dilemma spring ALE"
+            }
+        },
+        {
+            id: "pivo5",
+            beerName:"Dogma - Albino",
+            typeBeer:"Craft",
+            price: 290,
+            img:
+            {
+                src:"assets/img/store/dogma-albino.jpg",
+                alt:"Dogma albino"
+            }
+        },
+        {
+            id: "pivo6",
+            beerName:"Dogma - Hoptopod",
+            typeBeer:"Craft",
+            price: 290,
+            img:
+            {
+                src:"assets/img/store/dogma-hoptopod.jpg",
+                alt:"Dogma hoptopod"
+            }
+        },
+        {
+            id: "pivo7",
+            beerName:"Dogma - Svetionik",
+            typeBeer:"Craft",
+            price: 290,
+            img:
+            {
+                src:"assets/img/store/dogma-svetionik.jpg",
+                alt:"Dogma svetionik"
+            }
+        },
+        {
+            id: "pivo8",
+            beerName:"Dvorog - Zduhač",
+            typeBeer:"Craft",
+            price: 300,
+            img:
+            {
+                src:"assets/img/store/dvorog-zduhac.jpg",
+                alt:"Dvorog zdhuac"
+            }
+        },
+        {
+            id: "pivo9",
+            beerName:"Heineken",
+            typeBeer:"Bottle",
+            price: 90,
+            img:
+            {
+                src:"assets/img/store/heineken.jpg",
+                alt:"Heineken"
+            }
+        },
+        {
+            id: "pivo10",
+            beerName:"Jelen",
+            typeBeer:"Bottle",
+            price: 55,
+            img:
+            {
+                src:"assets/img/store/jelen.jpg",
+                alt:"Jelen"
+            }
+        },
+        {
+            id: "pivo11",
+            beerName:"Kabinet - Moon",
+            typeBeer:"Craft",
+            price: 310,
+            img:
+            {
+                src:"assets/img/store/kabinet-to-the-moon.jpg",
+                alt:"Kabinet to the moon"
+            }
+        },
+        {
+            id: "pivo12",
+            beerName:"Lav",
+            typeBeer:"Bottle",
+            price: 55,
+            img:
+            {
+                src:"assets/img/store/lav.jpg",
+                alt:"Lav"
+            }
+        },
+        {
+            id: "pivo13",
+            beerName:"Lowenbrau",
+            typeBeer:"Bottle",
+            price: 65,
+            img:
+            {
+                src:"assets/img/store/lowenbrau.jpg",
+                alt:"Lowenbrau"
+            }
+        },
+        {
+            id: "pivo14",
+            beerName:"Niksic",
+            typeBeer:"Bottle",
+            price: 55,
+            img:
+            {
+                src:"assets/img/store/niksic.jpg",
+                alt:"Niksic"
+            }
+        },
+        {
+            id: "pivo15",
+            beerName:"Paulaner",
+            typeBeer:"Wheat",
+            price: 110,
+            img:
+            {
+                src:"assets/img/store/paulaner-psenicno.jpg",
+                alt:"Paulaner - Wheat beer"
+            }
+        },
+        
+    ]
+    var store = document.getElementById("store");
+
+    ispis = "";       
+    for(let beer of beers)
+    {
+        ispis += `<div id=${beer.id} class="col-md-3 border roundend mt-4 pb-2 shadow bg-white font-fjalla ml-1 d-block cursor">
+                    <img src="${beer.img.src}" alt="${beer.img.alt}" class="img-fluid border-bottom pt-2 mb-2 col-12"/>
+                    <table>
+                        <tr><td><p class="text-primary">Name:</p></td> <td><p class="ml-1">${beer.beerName}</p></td></tr>
+                        <tr><td><p class="text-primary">Type:</p></td> <td><p>${beer.typeBeer}</p></td></tr>
+                        <tr><td><p class="text-primary">Price:</p></td><td><p> ${beer.price} RSD</p></td></tr>
+                    </table>
+                    <input type="button" class="add-to-cart w-100" value="Add to cart"/>
+                </div>`;
+    }
+    store.innerHTML += ispis;
+
+
+    
+
+    // for(let i = 0; i < 3; i++)
+    // {
+    //     var filterClickBeerID = document.querySelectorAll(`#hover${i}`);
+    //     filterClickBeerID[i].addEventListener("click", function()
+    //     {
+    //         console.log(filterClickBeerID);
+    //         //var rezultat1 = beers.filter(beer =>
+    //             //     {
+    //             //         let beerId = document.getElementById(beer.id);
+    //             //         if(beer.typeBeer == "Bottle")
+    //             //         {
+    //             //             beerId.classList.add("d-block");
+    //             //         }
+    //             //         else
+    //             //         {
+    //             //             beerId.classList.remove("d-block");
+    //             //             beerId.classList.add("d-none");
+    //             //         }
+    //     });
+    // }
+
+    // clickId0.addEventListener("click", function()
+    // {
+    //     var rezultat1 = beers.filter(beer =>
+    //     {
+    //         let beerId = document.getElementById(beer.id);
+    //         if(beer.typeBeer == "Bottle")
+    //         {
+    //             beerId.classList.add("d-block");
+    //         }
+    //         else
+    //         {
+    //             beerId.classList.remove("d-block");
+    //             beerId.classList.add("d-none");
+    //         }
+
+    //     });
+                
+                
+    //     // rezultat1.forEach((beer) => 
+    //     // {
+    //     //     let beerId = document.getElementById(beer.id);
+    //     //     if(rezultat1 == "Bottle")
+    //     //     {
+    //     //         beerId.classList.remove("d-block");
+    //     //         beerId.classList.add("d-none");
+    //     //     }
+    //     //     else
+    //     //     {
+    //     //         beerId.classList.add("d-block");
+    //     //     }
+    //     // })
+    //     console.log(rezultat1);
+    // })
+
+    //Translate Animation
+    var hover = document.getElementsByClassName("hover");
+    for(let i = 0; i < hover.length; i++)
+    {
+        hover[i].addEventListener("mouseover", function()
+        {
+            // var hoverID = document.getElementById(`hover${i}`);
+            // hoverID.innerHTML = `<h1>PROBA</h1>`
+            // console.log(hoverID);
+            hover[i].style.transform = "translateY(100%)";
+        })
+        hover[i].addEventListener("mouseout", function()
+        {
+            hover[i].classList.remove("text");
+            hover[i].style.transform = "translateY(0px)";
+        })
+    }
+
+
+
+    var search = document.getElementById("search");
+    search.addEventListener("input", () => 
+    {
+        let vrednost = search.value.toLowerCase(); //Ovako radi
+        //vrednost.toLowerCase(); //Ovako kad imam ne radi
+        console.log(vrednost);
+        let proba1 = beers.filter((beer) => {
+            let beerId = document.getElementById(beer.id);
+            if(beer.beerName.toLowerCase().indexOf(vrednost) > -1)
+            {
+                beerId.classList.add("d-block");
+            }
+            else
+            {
+                beerId.classList.remove("d-block");
+                beerId.classList.add("d-none");
+            }
+        });
+       
+
+        console.log(proba1); 
+    });
 })
