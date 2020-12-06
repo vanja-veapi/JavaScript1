@@ -286,6 +286,43 @@ nav a:hover
     margin-left: 0;
     margin-right: 0;
 }
+.btn-warning
+{
+    background-color: #f4b233;
+    font-size: 1.2rem;
+}
+/* Gallery */
+
+.left-22
+{
+    left: 22%;
+}
+.carousel-item .border
+{
+    border: 10px solid #fff !important;
+}
+/*  Contact   */
+#contact
+{
+    background-image: url(../img/form-bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.error
+{
+    color: #007bff;
+}
+.font-size
+{
+    font-size: 1.2rem;
+}
+
+form p
+{
+    margin-bottom: 0;
+}
+/* Contact end */
+
 
 /* canvas
 {

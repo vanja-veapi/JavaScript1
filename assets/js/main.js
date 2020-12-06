@@ -440,13 +440,13 @@ $(document).ready(function()
     for(let beer of beers)
     {
         ispis += `<div id=${beer.id} class="col-md-3 border roundend mt-4 pb-2 shadow bg-white font-fjalla ml-1 d-block">
-                    <img src="${beer.img.src}" alt="${beer.img.alt}" class="img-fluid border-bottom pt-2 mb-2 col-12 cursor"/>
+                    <img src="${beer.img.src}" alt="${beer.img.alt}" class="img-fluid border-bottom pt-2 mb-2 col-12"/>
                     <table class="table-responsive">
                         <tr><td><p class="text-primary">Name:</p></td> <td><p class="ml-1">${beer.beerName}</p></td></tr>
                         <tr><td><p class="text-primary">Type:</p></td> <td><p>${beer.typeBeer}</p></td></tr>
                         <tr><td><p class="text-primary">Price:</p></td><td><p> ${beer.price} RSD</p></td></tr>
                     </table>
-                    <input type="button" class="add-to-cart w-100" value="Add to cart"/>
+                    <input type="button" class="btn btn-warning add-to-cart w-100 text-white rounded display-1" value="Add to cart"/>
                 </div>`;
     }
     store.innerHTML += ispis;
@@ -535,6 +535,11 @@ $(document).ready(function()
     });
 
     //Gallery
+
+    //Forms - Regular expression
+    var btn = document.getElementById("btn");
+
+    btn.addEventListener("click", checkForm);
     
 });
 
@@ -547,4 +552,93 @@ function slideShow()
     trenutni.addClass('d-none');
     sledeci.addClass('d-block');
     setTimeout(slideShow, 5000);
+}
+
+function checkForm()
+{
+    let counter = 0; //Brojac koji ce ako bude sve validno da vrati broj 3
+
+    let errName = document.getElementById("error-name");
+    let name = document.getElementById("name").value;
+
+    let regExpNameSurname = /^[A-ZŠĐŽČĆ][a-zšđžčć]{2,12}$/;
+    let valid = true;
+    if(name === "")
+    {
+        valid = false;
+        errName.innerHTML = '<p class="error">The field Name is empty.</p>';
+    }
+    else
+    {
+        if(!regExpNameSurname.test(name))
+        {
+            valid = false;
+            errName.innerHTML = '<p class="error">Name is not in valid format. Name must start with first capital letter and to have minimum 3 characters.</p>';
+        }
+        else
+        {
+            counter++;
+            valid = true;
+            errName.innerHTML = "";
+        }
+    }
+
+    let errSurname = document.getElementById("error-surname");
+    let surname = document.getElementById("surname").value;
+    let regExpSurname = /^[A-ZŠĐŽČĆ][a-zšđžčć]{2,12}$/;
+
+    if(surname == "")
+    {
+        valid = false;
+        errSurname.innerHTML = `<p class="error">Field surname is empty</p>`;
+    }
+    else
+    {
+        if(!regExpNameSurname.test(name))
+        {
+            valid = false;
+            errSurname.innerHTML = `<p class="error">Surname is not in valid format.</p>`;
+        }
+        else
+        {
+            counter++;
+            valid = true;
+            errSurname = "";
+        }
+    }
+    console.log(surname);
+
+    let errEmail = document.getElementById("error-email");
+    let email = document.getElementById("email").value;
+
+    let regExpMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if(email === "")
+    {
+        valid = false;
+        errEmail.innerHTML = "<p class='error'>Greska</p>";
+    }
+    else
+    {
+        if(!regExpMail.test(email))
+        {
+            valid = false;
+            errEmail.innerHTML = "<p class='error'>Lose napisan mail</p>";
+        }
+        else
+        {
+            counter++;
+            valid = true;
+            errEmail.innerHTML = "";
+        }
+    }
+
+    if(counter === 3)
+    {
+        console.log("jesteeee");
+    }
+    else
+    {
+        console.log("Nije bajo");
+    }
 }

@@ -96,7 +96,7 @@
     <!--END-->
 
     <!--Store - Prodavnica-->
-    <div id="container-store" class="container-fluid pt-4 bg-secondary">
+    <div id="container-store" class="container-fluid pt-4 pb-4 bg-secondary">
         <h4 class="text-uppercase text-center font-fjalla pb-3 border-bottom w-50 m-auto h1">Shop</h4>
         <div id="store" class="row h5 justify-content-around">
             <!-- <div class="col-md-3 border roundend mt-4 pb-2 shadow bg-white font-fjalla">
@@ -112,22 +112,49 @@
     <!-- Gallery -->
     <div id="gallery" class="container-fluid bg-primary">
         <div class="row">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide w-100 pt-3 pb-3" data-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="assets/img/slider1.jpg" alt="First slide">
+                  <div class="carousel-item active left-22">
+                    <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider1.jpg" alt="First slide">
                   </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/img/slider2.jpg" alt="Second slide">
+                  <div class="carousel-item left-22">
+                    <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider2.jpg" alt="Second slide">
                   </div>
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="assets/img/slider3.jpg" alt="Third slide">
+                  <div class="carousel-item left-22">
+                    <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider3.jpg" alt="Third slide">
                   </div>
                 </div>
               </div>
         </div>
     </div>
     <!-- Gallery end-->
+
+    <!-- Contact form-->
+    <div id="contact" class="container-fluid pt-3 pb-3">
+        <div class="row w-100">
+                <form action="1.php" method="POST" class="w-50 m-auto text-white bg-primary rounded shadow p-4 font-fjalla font-size">
+                    <label for="name" class="mb-3">Name *</label>
+                    <div id="error-name">
+                        
+                    </div>
+                    <input type="text" id="name" class="form-control w-100 mb-2" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1"/>
+
+                    <label for="name" class="mt-2 mb-3">Surname *</label>
+                    <div id="error-surname">
+                        
+                    </div>
+                    <input type="text" id="surname" class="form-control w-100 mb-2" placeholder="Surname" aria-label="Surname" aria-describedby="basic-addon1"/>
+
+                    <label for="name" class="mt-2 mb-3">Email *</label>
+                    <div id="error-email">
+                       
+                    </div>
+                    <input type="text" id="email" class="form-control w-100 mb-2" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"/>
+                    <input type="button" id="btn" class="btn btn-primary pl-4 pr-4 float-right" value="Send"/>
+                </form>
+        </div>
+    </div>
+    <!-- Contact form end-->
     <!-- jQuery and JS bundle w/ Popper.js -->
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
