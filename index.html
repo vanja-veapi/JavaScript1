@@ -17,18 +17,27 @@
         <!--Header start-->
         <header class="container-fluid">
             <div class="row h-100">
-                <div id="logo" class="col-md-4 logo d-flex align-items-center">
-            </div>
-            <nav class="d-none col-md-8 d-md-flex justify-content-end">
-                <ul id="nav-list" class="d-flex">
+                <div id="logo" class="col-6 col-md-4 logo d-flex align-items-center"></div>
+
+                <nav class="d-none col-md-8 d-md-flex justify-content-end">
+                    <ul id="nav-list" class="nav-list d-flex">
                     <!-- <li><a href="" class="text-white text-uppercase">Home</a></li>
                         <li><a href="" class="text-white text-uppercase">Gallery</a></li>
                         <li><a href="" class="text-white text-uppercase">About</a></li>
                         <li><a href="" class="text-white text-uppercase">Jos nesto</a></li> -->
                     </ul>
                 </nav>
+                <div id="hamburger" class="col-6 text-white d-sm-block d-md-none m-auto">
+                    <button id="hamburger-btn" type="button" class="btn btn-primary"><i id="fa-bars" class="fa fa-bars"></i></button>
+                </div>
             </div>
         </header>
+        <div id="my-side-nav" class="side-nav">
+            <div class="nav-content">
+                <i id="close" class="close">&times;</i>
+                <ul class="nav-list font-fjalla text-dark"></ul>
+            </div>
+        </div>
         <!--Header end-->
             
         <!--Slider and Beer counter-->
@@ -160,7 +169,7 @@
 
                 <div id="myModal" class="modal">
                     <div class="modal-content">
-                        <span class="close">&times;</span>
+                        <i class="close">&times;</i>
                         <p id="message" class="text-center text-dark"></p>
                     </div>
                 </div>

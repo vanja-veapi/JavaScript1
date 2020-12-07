@@ -15,6 +15,10 @@ $(document).ready(function()
 
     logo.appendChild(img); //Adding element "img" to variable logo(#logo);
 
+    //Hamburger
+    var hamburger = document.getElementById("fa-bars");
+    var mySideNav = document.getElementById("my-side-nav"); //Hamburger nav meni koji se otvara na klik
+
     document.addEventListener("scroll", function()
     {
         //console.log(window.scrollY);
@@ -23,15 +27,19 @@ $(document).ready(function()
             img.setAttribute("width", "60");
             header.style.fontSize = "32px";
             header.style.height = "90px";
+            hamburger.style.fontSize = "40px";
+            mySideNav.style.top = "90px";
         }
         else if(window.scrollY > 0)
         {
             img.setAttribute("width", "40");
             header.style.fontSize = "24px";
             header.style.height = "63px";
+            hamburger.style.fontSize = "25px";
+            mySideNav.style.top = "63px";
         }
     })
-    var navList = document.getElementById("nav-list");
+    var navList = document.getElementsByClassName("nav-list");
     var nav =
     [
         {
@@ -60,12 +68,39 @@ $(document).ready(function()
     {
         if(element.ime == "Home")
         {
-            navList.innerHTML += `<li class="nav-items pl-1 pr-1"><a href="${element.putanja}" class="nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
+            navList[0].innerHTML += `<li class="nav-items pl-1 pr-1"><a href="${element.putanja}" class="nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
         }
         else
         {
-            navList.innerHTML += `<li class="nav-items pl-1 pr-1"><a href="${element.putanja}" class="nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
+            navList[0].innerHTML += `<li class="nav-items pl-1 pr-1"><a href="${element.putanja}" class="nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
         }
+    }
+    for(let element of nav)
+    {
+            navList[1].innerHTML += `<li class="dropdown-item pl-1 pr-1"><a href="${element.putanja}" class="nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
+    }
+
+    //jQuery hambruger
+    $("#hamburger-btn").click(function(){
+        $("#my-side-nav").css("display", "block");
+        $(".nav-content").animate({
+            marginRight : "0"
+        }, 50);
+    });
+
+    $("#close").click(function(){
+        $(".nav-content").animate({
+            marginRight : "-225px"
+        }, 50);
+        setTimeout(changeDisplay, 400, "linear");
+        
+    })
+
+
+
+    function changeDisplay()
+    {
+        $("#my-side-nav").css("display", "none");
     }
 
     var beers =
