@@ -540,7 +540,25 @@ $(document).ready(function()
     var btn = document.getElementById("btn");
 
     btn.addEventListener("click", checkForm);
+
+    //Useful links
+
+    var tr = document.getElementsByClassName("tr");
+    var trArr = ["Vanja Veapi", "vanja.veapi@gmail.com", "060 123 45 56"];
+
+    for(let i = 0; i < tr.length; i++)
+    {
+        tr[i].innerHTML += `<td class="text-white pb-3">${trArr[i]}</td>`; 
+    }
     
+    var link = document.getElementsByClassName("link");
+    var linkArr = ["Facebook", "Instagram", "LinkedIn", "Behance", "Sitemap", "RSS"];
+    var linkArrHref = ["https://www.facebook.com/vanja.veapi/", "https://www.instagram.com/vanja.veapi/", "https://www.linkedin.com/in/vanjaveapi/", "sitemap.xml",  "rss.xml"];
+
+    for(let i = 0; i < link.length; i++)
+    {
+        link[i].innerHTML += `<a href="${linkArrHref[i]}"><p class="mt-1 ml-3 h3 font-fjalla">${linkArr[i]}</p></a>`;
+    }
 });
 
 function slideShow()
@@ -573,7 +591,7 @@ function checkForm()
         if(!regExpNameSurname.test(name))
         {
             valid = false;
-            errName.innerHTML = '<p class="error">Name is not in valid format. Name must start with first capital letter and to have minimum 3 characters.</p>';
+            errName.innerHTML = '<p class="error">Name is not in valid format. Name must start with first capital letter and to have minimum 3 characters and maximum 14 characters.</p>';
         }
         else
         {
@@ -587,14 +605,15 @@ function checkForm()
     let surname = document.getElementById("surname").value;
     let regExpSurname = /^[A-ZŠĐŽČĆ][a-zšđžčć]{2,12}$/;
 
-    if(surname == "")
+    errSurname.innerHTML = ""; //Bez ovoga ima bag da nece da restartuje inerhtml
+    if(surname === "")
     {
         valid = false;
         errSurname.innerHTML = `<p class="error">Field surname is empty</p>`;
     }
     else
     {
-        if(!regExpNameSurname.test(name))
+        if(!regExpSurname.test(surname))
         {
             valid = false;
             errSurname.innerHTML = `<p class="error">Surname is not in valid format.</p>`;
@@ -635,6 +654,27 @@ function checkForm()
 
     if(counter === 3)
     {
+        document.getElementById("myModal").style.display = "block";
+        let span = document.getElementsByClassName("close")[0];
+        span.addEventListener("click", () => {
+            document.getElementById("myModal").style.display = "none";
+        })
+
+        let message = document.getElementById("message");
+        message.innerHTML = `<p>Your parameter sent to the server. This is your data:</p>
+        <table class="table-responsive table table-center mt-3 d-flex justify-content-center">
+        <tr>
+            <td>Name: </td>
+            <td class="text-blue">${name}</td>
+        </tr>
+            <td>Surame: </td>
+            <td class="text-blue">${surname}</td>
+        </tr>
+        <tr>
+            <td>E-mail: </td>
+            <td class="text-blue">${email}</td>
+        </tr>
+        </table><br/>`
         console.log("jesteeee");
     }
     else
@@ -642,3 +682,26 @@ function checkForm()
         console.log("Nije bajo");
     }
 }
+
+function onReady(callback) 
+{
+    var intervalId = window.setInterval(function() 
+    {
+      if (document.getElementsByTagName('body')[0] !== undefined) 
+      {
+        window.clearInterval(intervalId);
+        callback.call(this);
+      }
+    }, 1000);
+  }
+  
+function setVisible(selector, visible) 
+{
+document.querySelector(selector).style.display = visible ? 'block' : 'none';
+}
+
+onReady(function() 
+{
+setVisible('.page', true);
+setVisible('#loading', false);
+});

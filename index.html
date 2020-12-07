@@ -4,127 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beer Shop</title>
+    <!-- FaFa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!--Header start-->
-    <header class="container-fluid">
-        <div class="row h-100">
-            <div id="logo" class="col-md-4 logo d-flex align-items-center">
+    <div class="page">
+
+        <!--Header start-->
+        <header class="container-fluid">
+            <div class="row h-100">
+                <div id="logo" class="col-md-4 logo d-flex align-items-center">
             </div>
             <nav class="d-none col-md-8 d-md-flex justify-content-end">
                 <ul id="nav-list" class="d-flex">
                     <!-- <li><a href="" class="text-white text-uppercase">Home</a></li>
-                    <li><a href="" class="text-white text-uppercase">Gallery</a></li>
-                    <li><a href="" class="text-white text-uppercase">About</a></li>
-                    <li><a href="" class="text-white text-uppercase">Jos nesto</a></li> -->
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <!--Header end-->
-
-    <!--Slider and Beer counter-->
-    <div id="home" class="container-fluid pt-5">
-        <div id="slider-beer-counter" class="container">
-            <div class="row align-items-center">
-                <div id="slider" class="row pt-3 pb-3 col-8 overflow-hidden">
-                    <img src="assets/img/slider1.jpg" class="img-fluid roundend d-block" alt="Slider 1"/>
-                    <img src="assets/img/slider2.jpg" class="img-fluid roundend d-none" alt="Slider 2"/>
-                    <img src="assets/img/slider3.jpg" class="img-fluid roundend d-none" alt="Slider 3"/>
-                </div>
-                <div id="counter" class="ml-4 col-4 h-auto text-center roundend bg-primary">
-                    <p class="h2 mt-2">How much beer did you drink today?</p>
-                    <p id="p-tag-value" class="h1 pt-4 pb-4"><input id="value" class="text-center w-100" type="text" value="0" disabled/></p>
-                    <table id="first" class="w-100 mb-3">
-                        <tr>
-                            <td><input id="increment" class="roundend waves-effect" type="button" value="+"/></td><td><input id="decrement" class="roundend" type="button" value="-"/></td>
-                        </tr>
-                    </table>
+                        <li><a href="" class="text-white text-uppercase">Gallery</a></li>
+                        <li><a href="" class="text-white text-uppercase">About</a></li>
+                        <li><a href="" class="text-white text-uppercase">Jos nesto</a></li> -->
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--Header end-->
+            
+        <!--Slider and Beer counter-->
+        <div id="home" class="container-fluid pt-5">
+            <div id="slider-beer-counter" class="container">
+                <div class="row align-items-center">
+                    <div id="slider" class="row pt-3 pb-3 col-8 overflow-hidden">
+                        <img src="assets/img/slider1.jpg" class="img-fluid roundend d-block" alt="Slider 1"/>
+                        <img src="assets/img/slider2.jpg" class="img-fluid roundend d-none" alt="Slider 2"/>
+                        <img src="assets/img/slider3.jpg" class="img-fluid roundend d-none" alt="Slider 3"/>
+                    </div>
+                    <div id="counter" class="ml-4 col-4 h-auto text-center roundend bg-primary">
+                        <p class="h2 mt-2">How much beer did you drink today?</p>
+                        <p id="p-tag-value" class="h1 pt-4 pb-4"><input id="value" class="text-center w-100" type="text" value="0" disabled/></p>
+                        <table id="first" class="w-100 mb-3">
+                            <tr>
+                                <td><input id="increment" class="roundend waves-effect" type="button" value="+"/></td><td><input id="decrement" class="roundend" type="button" value="-"/></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    <!-- Slider and Beer counter end-->
-
-    <!-- Title and description -->
-        <div id="title" class="container-fluid bg-primary mt-4 font-fjalla">
-            <div class="row">
-                <div class="w-100 text-center col-lg-12">
-                    <h1 class="text-uppercase h1 mt-2 mb-5">Beer Shop</h1> <!-- H1 TAG JE ISKORISCEN ! -->
-                </div>
-
-
-
-                <div id="title-description" class="d-content w-100">
+            <!-- Slider and Beer counter end-->
+                
+            <!-- Title and description -->
+            <div id="title" class="container-fluid bg-primary mt-4 font-fjalla">
+                <div class="row">
+                    <div class="w-100 text-center col-lg-12">
+                        <h1 class="text-uppercase h1 mt-2 mb-5">Beer Shop</h1> <!-- H1 TAG JE ISKORISCEN ! -->
+                    </div>
+                
+                
+                
+                    <div id="title-description" class="d-content w-100">
                     <!-- H2 TAG -->
 
                     <!-- <div class="col-lg-6">
                         <h2 class="mb-3 border-bot"></h2> 
                         <p class="text-left w-75 p-font-size"></p>
                     </div>
-
+                    
                     <div class="col-lg-6">
                         <h2 class="mb-3 border-bot">What we offer?</h2>
                         <p class="text-left w-75 p-font-size">We offer every kind of beer. Beer in a glass bottle, draft beer, craft beer, wheat beer. Also, we offer special beer like chocolate beer, honey beer, and strawberry beer.</p>
                         <p class="text-left w-75 p-font-size">We have beer from every country. The most popular beer is BIP, from Belgrade, Serbia.</p>
                     </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- Title END -->
+            
+            <!--Beer types and quotes-->
+            <div id="parallax" class="container-fluid d-flex align-items-center clearfix">
+                <input id="search" class="text-dark" type="text" placeholder="Name of beer"/>
+                <!-- H3 TAG  -->
+            </div>
+            <div id="beer-choice" class="container-fluid mt-5 mb-5">
+                <div id="beer-choice1" class="row">
+                </div>
+            </div>
+            
+            <div id="quotes" class="container-fluid bg-primary text-white h1 d-flex justify-content-center font-fjalla pt-2">
+                <div class="row">
+                    <p class="ml-3 pt-3">Proba</p>
+                    <p class="ml-3 pt-3">Citat majku ti tvoju</p>
                 </div>
             </div>
         </div>
-    <!-- Title END -->
-
-    <!--Beer types and quotes-->
-        <div id="parallax" class="container-fluid d-flex align-items-center clearfix">
-            <input id="search" class="text-dark" type="text" placeholder="Name of beer"/>
-            <!-- H3 TAG  -->
-        </div>
-        <div id="beer-choice" class="container-fluid mt-5 mb-5">
-            <div id="beer-choice1" class="row">
+        <!--END-->
+        
+        <!--Store - Prodavnica-->
+        <div id="container-store" class="container-fluid pt-4 pb-4 bg-secondary">
+            <h4 class="text-uppercase text-center font-fjalla pb-3 border-bottom w-50 m-auto h1">Shop</h4>
+            <div id="store" class="row h5 justify-content-around">
+                <!-- <div class="col-md-3 border roundend mt-4 pb-2 shadow bg-white font-fjalla">
+                    <img src="assets/img/store/dilemma-ipa.jpg" alt="Zajecarsko pivo" class="img-fluid border-bottom pt-2 mb-2 col-12"/>
+                    <p>Name: Zaječarsko</p>
+                    <p>Type: Bottle beer</p>
+                    <p>Price: 170RSD</p>
+                    <input type="button" class="add-to-cart w-100" value="Add to cart"/>
+                </div> -->
             </div>
         </div>
-
-        <div id="quotes" class="container-fluid bg-primary text-white h1 d-flex justify-content-center font-fjalla pt-2">
+        <!--Store end-->
+        <!-- Gallery -->
+        <div id="gallery" class="container-fluid bg-primary">
             <div class="row">
-                <p class="ml-3 pt-3">Proba</p>
-                <p class="ml-3 pt-3">Citat majku ti tvoju</p>
-            </div>
-        </div>
-    </div>
-    <!--END-->
-
-    <!--Store - Prodavnica-->
-    <div id="container-store" class="container-fluid pt-4 pb-4 bg-secondary">
-        <h4 class="text-uppercase text-center font-fjalla pb-3 border-bottom w-50 m-auto h1">Shop</h4>
-        <div id="store" class="row h5 justify-content-around">
-            <!-- <div class="col-md-3 border roundend mt-4 pb-2 shadow bg-white font-fjalla">
-                <img src="assets/img/store/dilemma-ipa.jpg" alt="Zajecarsko pivo" class="img-fluid border-bottom pt-2 mb-2 col-12"/>
-                <p>Name: Zaječarsko</p>
-                <p>Type: Bottle beer</p>
-                <p>Price: 170RSD</p>
-                <input type="button" class="add-to-cart w-100" value="Add to cart"/>
-            </div> -->
-        </div>
-    </div>
-    <!--Store end-->
-    <!-- Gallery -->
-    <div id="gallery" class="container-fluid bg-primary">
-        <div class="row">
-            <div id="carouselExampleSlidesOnly" class="carousel slide w-100 pt-3 pb-3" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active left-22">
-                    <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider1.jpg" alt="First slide">
-                  </div>
-                  <div class="carousel-item left-22">
-                    <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider2.jpg" alt="Second slide">
-                  </div>
-                  <div class="carousel-item left-22">
-                    <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider3.jpg" alt="Third slide">
-                  </div>
+                <h5 class="h1 text-center text-uppercase font-fjalla w-50 border-bottom m-auto pt-2 pb-2 text-white">Gallery</h5>
+                <div id="carouselExampleSlidesOnly" class="carousel slide w-100 pt-3 pb-3" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active left-22">
+                            <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider1.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item left-22">
+                            <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider2.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item left-22">
+                        <img class="d-block img-fluid position-relative border rounded" src="assets/img/slider3.jpg" alt="Third slide">
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
     <!-- Gallery end-->
@@ -132,34 +137,100 @@
     <!-- Contact form-->
     <div id="contact" class="container-fluid pt-3 pb-3">
         <div class="row w-100">
-                <form action="1.php" method="POST" class="w-50 m-auto text-white bg-primary rounded shadow p-4 font-fjalla font-size">
-                    <label for="name" class="mb-3">Name *</label>
-                    <div id="error-name">
-                        
-                    </div>
-                    <input type="text" id="name" class="form-control w-100 mb-2" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1"/>
+            <form action="1.php" method="POST" class="w-50 m-auto text-white bg-primary rounded shadow p-4 font-fjalla font-size">
+                <h6 class="h1 text-center text-uppercase font-fjalla w-50 m-auto pt-2 pb-4 text-white">Contact form</h5>
+                <label for="name" class="mb-3">Name *</label>
+                <div id="error-name">
+                    
+                </div>
+                <input type="text" id="name" class="form-control w-100 mb-2" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1"/>
+                
+                <label for="name" class="mt-2 mb-3">Surname *</label>
+                <div id="error-surname">
+                    
+                </div>
+                <input type="text" id="surname" class="form-control w-100 mb-2" placeholder="Surname" aria-label="Surname" aria-describedby="basic-addon1"/>
+                
+                <label for="name" class="mt-2 mb-3">Email *</label>
+                <div id="error-email">
+                    
+                </div>
+                <input type="text" id="email" class="form-control w-100 mb-2" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"/>
+                <input type="button" id="btn" class="btn btn-primary pl-4 pr-4 float-right" value="Send"/>
 
-                    <label for="name" class="mt-2 mb-3">Surname *</label>
-                    <div id="error-surname">
-                        
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p id="message" class="text-center text-dark"></p>
                     </div>
-                    <input type="text" id="surname" class="form-control w-100 mb-2" placeholder="Surname" aria-label="Surname" aria-describedby="basic-addon1"/>
+                </div>
 
-                    <label for="name" class="mt-2 mb-3">Email *</label>
-                    <div id="error-email">
-                       
-                    </div>
-                    <input type="text" id="email" class="form-control w-100 mb-2" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"/>
-                    <input type="button" id="btn" class="btn btn-primary pl-4 pr-4 float-right" value="Send"/>
-                </form>
+            </form>
         </div>
     </div>
     <!-- Contact form end-->
-    <!-- jQuery and JS bundle w/ Popper.js -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <!-- Main JS -->
-    <script src="assets/js/main.js" type="text/javascript"></script>
+
+    <!-- Useful links-->
+    <div id="contacts" class="container-fluid bg-primary pt-5 pb-5">
+        <div class="row justify-content-around">
+            <div class="col-6">
+                <p class="h2 font-fjalla border-bottom text-uppercase w-75 text-white m-auto">Contact</p>
+                <div id="left" class="w-75 m-auto">
+                    <table id="table1" class="table-responsive font-fjalla h4 mt-3">
+                        <tr class="tr">
+                            <td class="text-uppercase pr-3 pb-3">Ime: </td>
+                        </tr>
+                        <tr class="tr">
+                            <td class="text-uppercase pr-3 pb-3">Email: </td>
+                        </tr>
+                        <tr class="tr">
+                            <td class="text-uppercase pr-3 pb-3">Broj: </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-6">
+                <p class="h2 font-fjalla border-bottom text-uppercase w-75 text-white m-auto">Useful links</p>
+                <div id="right" class="w-75 m-auto pt-3">
+                    <div class="link d-flex align-itmes-center">
+                        <i class="fa fa-facebook p-2"></i>
+                    </div>
+
+                    <div class="link d-flex align-items-center">
+                        <i class="fa fa-instagram p-2"></i>
+                    </div>
+
+                    <div class="link d-flex align-items-center">
+                        <i class="fa fa-linkedin p-2"></i>
+                    </div>
+
+                    <div class="link d-flex align-items-center">
+                        <i class="fa fa-behance p-2"></i>
+                    </div>
+                    <div class="link d-flex align-items-center">
+                        <i class="fa fa-sitemap p-2"></i>
+                    </div>
+                    <div class="link d-flex align-items-center">
+                        <i class="fa fa-rss p-2"></i>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid bg-dark d-flex align-items-center justify-content-center">
+        <p class="h5 text-white font-fjalla mr-2">&copy; 2020 All right reserved.</p>
+        <p class="h5 text-white font-fjalla font-weight-bold">Vanja Veapi</p>
+    </footer>
+</div>
+
+<!-- Useful links end -->
+<!-- HTML END -->
+<div id="loading"></div>
+<!-- jQuery and JS bundle w/ Popper.js -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!-- Main JS -->
+<script src="assets/js/main.js" type="text/javascript"></script>
 </body>
 </html>
