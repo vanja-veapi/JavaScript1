@@ -732,11 +732,11 @@ function onReady(callback)
   
 function setVisible(selector, visible) 
 {
-document.querySelector(selector).style.display = visible ? 'block' : 'none';
+    document.querySelector(selector).style.display = visible ? 'block' : 'none';
 }
 
 onReady(function() 
 {
-setVisible('.page', true);
-setVisible('#loading', false);
+    setVisible('.page', true);
+    setVisible('#loading', false);
 });
