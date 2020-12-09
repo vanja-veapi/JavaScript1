@@ -509,6 +509,18 @@ footer
     {
         font-size: 1.35rem;
     }
+    #cart-and-filter.h5
+    {
+        font-size: 1rem;
+    }
+    #cart-and-filter.w-50
+    {
+        width: 100% !important;
+    }
+    h4.w-50
+    {
+        width: 100% !important;
+    }
 }
 @media screen and (max-width: 493px)
 {
