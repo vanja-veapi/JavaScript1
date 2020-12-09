@@ -627,7 +627,7 @@ $(document).ready(function()
     
     var link = document.getElementsByClassName("link");
     var linkArr = ["Facebook", "Instagram", "LinkedIn", "Behance", "Sitemap", "RSS"];
-    var linkArrHref = ["https://www.facebook.com/vanja.veapi/", "https://www.instagram.com/vanja.veapi/", "https://www.linkedin.com/in/vanjaveapi/", "sitemap.xml",  "rss.xml"];
+    var linkArrHref = ["https://www.facebook.com/vanja.veapi/", "https://www.instagram.com/vanja.veapi/", "https://www.linkedin.com/in/vanjaveapi/", "https://www.behance.net/vanjaveapi99", "sitemap.xml",  "rss.xml"];
 
     for(let i = 0; i < link.length; i++)
     {
