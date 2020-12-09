@@ -47,10 +47,6 @@ $(document).ready(function()
             ime:"Home"
         },
         {
-            putanja:"#about",
-            ime:"About"
-        },
-        {
             putanja:"#beer-choice",
             ime:"Shop"
         },
@@ -61,6 +57,10 @@ $(document).ready(function()
         {
             putanja:"#contact",
             ime:"Contact"
+        },
+        {
+            putanja:"#",
+            ime:"about"
         }
     ]
 
@@ -68,16 +68,16 @@ $(document).ready(function()
     {
         if(element.ime == "Home")
         {
-            navList[0].innerHTML += `<li class="nav-items pl-1 pr-1"><a href="${element.putanja}" class="nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
+            navList[0].innerHTML += `<li class="nav-items pl-1 pr-1"><a href="${element.putanja}"  class="${element.ime} nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
         }
         else
         {
-            navList[0].innerHTML += `<li class="nav-items pl-1 pr-1"><a href="${element.putanja}" class="nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
+            navList[0].innerHTML += `<li class="nav-items pl-1 pr-1"><a href="${element.putanja}"  class="${element.ime} nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
         }
     }
     for(let element of nav)
     {
-            navList[1].innerHTML += `<li class="dropdown-item pl-1 pr-1"><a href="${element.putanja}" class="nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
+            navList[1].innerHTML += `<li class="dropdown-item pl-1 pr-1"><a href="${element.putanja}"  class="${element.ime} nav-link text-uppercase d-inline-block mt-2">${element.ime}</a></li>`
     }
 
     //jQuery hambruger
@@ -447,10 +447,27 @@ $(document).ready(function()
         container.addEventListener("click", function()
         {
             console.log(hover[i].alt);
-            let rezultat = beers.filter(element => element.typeBeer === hover[i].alt)
+            let rezultat = beers.filter((element) => {
+                let beerId = document.getElementById(element.id);
+                if(element.typeBeer === hover[i].alt)
+                {
+                    beerId.classList.add("d-block");
+                    console.log(beerId);
+                    return true;
+                }
+                else
+                {
+                    beerId.classList.remove("d-block");
+                    beerId.classList.add("d-none");
+                    return false;
+                }
+            });
             console.log(rezultat);
         });
     }
+    
+
+
 
     var quotesArr = ["Pivo treba piti, svaki dan.", "Pivo je nije alkohol.", "Ko pije pivo, unece vitamin D.", "Od svih piva, BIP je najbolje.", "Opasno se drogiram, al to nije vazno", "Droga je najboja osobina.", "Citat 1", "Citat 2", "Citat 3", "Citar 4"];
     var authorQuoteArr = ["Albert Ajnstajn", "Nikola Tesla", "Aleksandar Vucic", "Neznani junak", "Pera Peric", "Mika Mikic", "Zika Zikic", "Seka Sekic", "Paja Patak", "Miki Maus"];
@@ -481,12 +498,23 @@ $(document).ready(function()
                         <tr><td><p class="text-primary">Type:</p></td> <td><p>${beer.typeBeer}</p></td></tr>
                         <tr><td><p class="text-primary">Price:</p></td><td><p> ${beer.price} RSD</p></td></tr>
                     </table>
-                    <input type="button" class="btn btn-warning add-to-cart w-100 text-white rounded display-1" value="Add to cart"/>
+                    <input type="button" class="dugme btn btn-warning add-to-cart w-100 text-white rounded display-1" value="Add to cart"/>
                 </div>`;
     }
     store.innerHTML += ispis;
 
-
+    let beerCartCounter = document.getElementById("cart-counter");
+    let dugme = document.getElementsByClassName("dugme");
+    beerCartCounter.value = 0;
+    for(let i = 0; i < dugme.length; i++)
+    {
+        dugme[i].addEventListener("click", function()
+        {
+            console.log(typeof(beerCartCounter.value));
+            let konverzija = Number(beerCartCounter.value);
+            beerCartCounter.value = konverzija + 1;
+        })
+    }
     
 
     // for(let i = 0; i < 3; i++)
@@ -545,7 +573,7 @@ $(document).ready(function()
     // })
 
 
-
+    //Filtering by input
     var search = document.getElementById("search");
     search.addEventListener("input", () => 
     {
@@ -567,6 +595,17 @@ $(document).ready(function()
        
 
         console.log(proba1); 
+    });
+
+    //Clear filter
+    var clearFilter = document.getElementById("clear-filter");
+    clearFilter.addEventListener("click", () =>
+    {
+        let clear = beers.filter((beer) => {
+            let beerId = document.getElementById(beer.id);
+            beerId.classList.remove("d-none");
+        });
+        console.log(clear);
     });
 
     //Gallery
@@ -594,8 +633,75 @@ $(document).ready(function()
     {
         link[i].innerHTML += `<a href="${linkArrHref[i]}"><p class="mt-1 ml-3 h3 font-fjalla">${linkArr[i]}</p></a>`;
     }
+
+    $(".close").click(function()
+    {
+        $("#myModal").hide();
+    })
+
+    $(".about").click(aboutAuthor);
+
+
+
+    //jQuery PLUGIN
+    let counter = 0;
+    $(".show-more-text" ).hide("blind"); //Poziva se prvo hardkovoano da bi se zamenile pocetne pozicije, jer blind prvo uklanja tekst
+    $("#show-more").on("click", function(e) 
+    {
+        if(counter === 1)
+        {
+            counter = 0;
+            $(this).html("Show more");
+        }
+        else
+        {
+            counter = 1;
+            $(this).html("Show less");
+        }
+        console.log("Brojac je " + counter);
+        e.preventDefault();
+        runEffect();
+        return false;
+    });
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
+function runEffect()
+{
+    $(".show-more-text").removeClass("d-none");
+    $(".show-more-text" ).toggle("blind");
+}
+// function callback() {
+//     setTimeout(function() {
+//       $( ".show-more-text" ).removeAttr( "style" ).hide().fadeIn();
+//     }, 1000 );
+//   };
+function aboutAuthor(e)
+{
+    e.preventDefault();
+    $("#about-author").show();
+    console.log("true");
+
+    $(".close").click(function()
+    {
+        $("#about-author").hide();
+    })
+}
 function slideShow()
 {
     var trenutni = $("#slider .d-block");
@@ -612,24 +718,27 @@ function checkForm()
     let counter = 0; //Brojac koji ce ako bude sve validno da vrati broj 3
 
     let errName = document.getElementById("error-name");
-    let name = document.getElementById("name").value;
+    let name = document.getElementById("name");
 
     let regExpNameSurname = /^[A-ZŠĐŽČĆ][a-zšđžčć]{2,12}$/;
     let valid = true;
-    if(name === "")
+    if(name.value === "")
     {
         valid = false;
+        name.style.border = "1px solid #ff0000";
         errName.innerHTML = '<p class="error">The field Name is empty.</p>';
     }
     else
     {
-        if(!regExpNameSurname.test(name))
+        if(!regExpNameSurname.test(name.value))
         {
             valid = false;
+            name.style.border = "1px solid #ff0000";
             errName.innerHTML = '<p class="error">Name is not in valid format. Name must start with first capital letter and to have minimum 3 characters and maximum 14 characters.</p>';
         }
         else
         {
+            name.style.border = "1px solid #00ff00";
             counter++;
             valid = true;
             errName.innerHTML = "";
@@ -637,57 +746,91 @@ function checkForm()
     }
 
     let errSurname = document.getElementById("error-surname");
-    let surname = document.getElementById("surname").value;
+    let surname = document.getElementById("surname");
     let regExpSurname = /^[A-ZŠĐŽČĆ][a-zšđžčć]{2,12}$/;
 
     errSurname.innerHTML = ""; //Bez ovoga ima bag da nece da restartuje inerhtml
-    if(surname === "")
+    if(surname.value === "")
     {
         valid = false;
+        surname.style.border = "1px solid #ff0000";
         errSurname.innerHTML = `<p class="error">Field surname is empty</p>`;
     }
     else
     {
-        if(!regExpSurname.test(surname))
+        if(!regExpSurname.test(surname.value))
         {
             valid = false;
+            surname.style.border = "1px solid #ff0000";
             errSurname.innerHTML = `<p class="error">Surname is not in valid format.</p>`;
         }
         else
         {
             counter++;
             valid = true;
+            surname.style.border = "1px solid #00ff00"
             errSurname = "";
         }
     }
     console.log(surname);
 
     let errEmail = document.getElementById("error-email");
-    let email = document.getElementById("email").value;
+    let email = document.getElementById("email");
 
-    let regExpMail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let regExpMail = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
 
-    if(email === "")
+    if(email.value === "")
     {
         valid = false;
-        errEmail.innerHTML = "<p class='error'>Greska</p>";
+        email.style.border = "1px solid #ff0000";
+        errEmail.innerHTML = "<p class='error'>Email field can't be empty!</p>";
     }
     else
     {
-        if(!regExpMail.test(email))
+        if(!regExpMail.test(email.value))
         {
             valid = false;
-            errEmail.innerHTML = "<p class='error'>Lose napisan mail</p>";
+            email.style.border = "1px solid #ff0000";
+            errEmail.innerHTML = "<p class='error'>Email must start with small leter and must have @ for example (test@gmail.com).</p>";
         }
         else
         {
+            email.style.border = "1px solid #00ff00";
             counter++;
             valid = true;
             errEmail.innerHTML = "";
         }
     }
 
-    if(counter === 3)
+    let errAddress = document.getElementById("error-address")
+    let address = document.getElementById("address");
+
+    let regExpAdr = /^[A-ZČĆŽŠĐ][a-zčćžšđ]{2,50}\s[1-9]{1,3}$/;
+
+    if(address.value === "")
+    {
+        valid = false;
+        address.style.border = "1px solid #ff0000";
+        errAddress.innerHTML = "<p class='error'>Address field can't be empty</p>"
+    }
+    else
+    {
+        if(!regExpAdr.test(address.value))
+        {
+            valid = false;
+            address.style.border = "1px solid #ff0000";
+            errAddress.innerHTML = "<p class='error'>Address must have first capital letter and number of street.</p>"
+        }
+        else
+        {
+            counter++;
+            valid = true;
+            address.style.border = "1px solid #00ff00";
+            errAddress.innerHTML = "";
+        }
+    }
+
+    if(counter === 4)
     {
         document.getElementById("myModal").style.display = "block";
         let span = document.getElementsByClassName("close")[0];
@@ -700,14 +843,18 @@ function checkForm()
         <table class="table-responsive table table-center mt-3 d-flex justify-content-center">
         <tr>
             <td>Name: </td>
-            <td class="text-blue">${name}</td>
+            <td class="text-blue">${name.value}</td>
         </tr>
             <td>Surame: </td>
-            <td class="text-blue">${surname}</td>
+            <td class="text-blue">${surname.value}</td>
         </tr>
         <tr>
             <td>E-mail: </td>
-            <td class="text-blue">${email}</td>
+            <td class="text-blue">${email.value}</td>
+        </tr>
+        <tr>
+            <td>Address: </td>
+            <td class="text-blue">${address.value}</td>
         </tr>
         </table><br/>`
         console.log("jesteeee");

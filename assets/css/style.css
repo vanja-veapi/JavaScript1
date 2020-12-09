@@ -67,7 +67,7 @@ li:hover
     border-bottom: 3px solid #fff;
 }
 
-#p-tag-value input[type="text"]
+#p-tag-value input[type="text"], #cart-counter[type="text"]
 {
     color: #000000;
     background-color: rgba(0, 0, 0, 0);
@@ -122,6 +122,10 @@ li:hover
 .cursor
 {
     cursor: url(../img/cursor-beer.png), auto;
+}
+.offset-sm-1
+{
+    margin-left: -0.667%;
 }
 /* End of general */
 
@@ -208,7 +212,7 @@ nav a:hover
     background-color: #fefefe;
     margin-right: -225px;
     padding: 20px;
-    width: 30%;
+    width: 45%;
 }
 /* END HEADER */
 
@@ -325,6 +329,12 @@ nav a:hover
 /* PARALLAX DIV END */
 
 /*Store*/
+#clear-filter:hover
+{
+    cursor: pointer;
+    color: var(--primary);
+}
+
 #container-store h4.border-bottom
 {
     border-bottom: 3px solid var(--primary) !important;
@@ -354,11 +364,6 @@ nav a:hover
     font-size: 1.2rem;
 }
 /* Gallery */
-
-.left-22
-{
-    left: 22%;
-}
 .carousel-item .border
 {
     border: 10px solid #fff !important;
@@ -393,7 +398,7 @@ form p
 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 99; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -461,7 +466,145 @@ cursor: pointer;
 
 footer
 {
-    height: 70px;
+    height: 75px;
+}
+
+#about-author.modal
+{
+    padding-top: 35px;
+    overflow: unset;
+}
+#about-author .modal-content
+{
+    height: 90vh;
+    overflow-y: auto;
+}
+.table-responsive
+{
+    overflow-x: unset;
+}
+@media screen and (max-width: 860px)
+{
+    #quotes.h1
+    {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 736px)
+{
+    form.m-auto
+    {
+        margin: 0 !important;
+    }
+    form.w-50
+    {
+        width: 95% !important;
+        margin-left: auto !important;
+    }
+    #table1.h4
+    {
+        font-size: 1.3rem;
+    }
+    #right .h3
+    {
+        font-size: 1.35rem;
+    }
+}
+@media screen and (max-width: 493px)
+{
+    #parallax-h3.h1
+    {
+        font-size: 3.5rem;
+    }
+    #search
+    {
+        left: 10%;
+        width: 75%;
+        font-size: 1.5rem;
+    }
+    #contacts .h2
+    {
+        font-size: 1.4rem;
+    }
+    #contacts .w-75
+    {
+        width: 100% !important;
+    }
+    #table1.table-responsive
+    {
+        overflow-x: unset;
+    }
+    #table1.h4
+    {
+        font-size: 1.2rem;
+    }
+    #about-author .w-50
+    {   
+        width: 100% !important;
+    }
+    #about-author .h5
+    {
+        font-size: 0.9rem;
+    }
+    #show-more.h4
+    {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 420px)
+{
+    .w-75
+    {
+        width: 100%;
+    }
+    .p-font-size 
+    {
+        font-size: 21px;
+    }
+    #beer-choice .h1
+    {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+    }
+    #title > .row > .w-100 > .h1
+    {
+        font-size: 2rem;
+    }
+    .modal-content
+    {
+        width: 100%;
+    }
+    #message
+    {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 390px)
+{
+    .p-font-size
+    {
+        font-size: 16px;
+    }
+    .text-left.p-font-size
+    {
+        text-align: justify !important;
+        text-justify: distribute;
+    }
+    h2
+    {
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 310px)
+{
+    #parallax-h3
+    {
+        width: 90%;
+    }
+    #table1.h4
+    {
+        font-size: 1rem;
+    }
 }
 /* canvas
 {
