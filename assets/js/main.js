@@ -466,15 +466,12 @@ $(document).ready(function()
         });
     }
     
-
-
-
-    var quotesArr = ["Pivo treba piti, svaki dan.", "Pivo je nije alkohol.", "Ko pije pivo, unece vitamin D.", "Od svih piva, BIP je najbolje.", "Opasno se drogiram, al to nije vazno", "Droga je najboja osobina.", "Citat 1", "Citat 2", "Citat 3", "Citar 4"];
-    var authorQuoteArr = ["Albert Ajnstajn", "Nikola Tesla", "Aleksandar Vucic", "Neznani junak", "Pera Peric", "Mika Mikic", "Zika Zikic", "Seka Sekic", "Paja Patak", "Miki Maus"];
+    var quotesArr = ["Don't worry beer happy.", "Beer is not alcohol.", "Beer brate Brooklyn.", "BiP is the best Beer I've ever drank.", "On victory, you deserve beer.", "You can't drink all day if you don't start in the morning.", "Good people drink good beer.", "Wine is made by men, Beer by God", "Beer, beer and beer.", "Gimme a woman who loves beer and I'll conquer the world."];
+    var authorQuoteArr = ["Albert Einstien", "Nikola Tesla", "FTP Cojkana", "Unknown hero", "Napoleon Bonaparte", "Ivan Zlatic", "Adam Sandler", "Martin Luther", "Michael Scofield", "Mickey Mouse"];
     var quotes = document.getElementById("quotes");
     let randomNum = Math.floor(Math.random() * quotesArr.length);
     quotes.innerHTML = `<p class="ml-3 pt-3 pb-3">"${quotesArr[randomNum]}"</p><p class="ml-3 pt-3 pb-3">- ${authorQuoteArr[randomNum]}</p>`;
-    setInterval(getQuote, 5000);
+    setInterval(getQuote, 7000);
 
     function getQuote()
     {
@@ -516,63 +513,6 @@ $(document).ready(function()
         })
     }
     
-
-    // for(let i = 0; i < 3; i++)
-    // {
-    //     var filterClickBeerID = document.querySelectorAll(`#hover${i}`);
-    //     filterClickBeerID[i].addEventListener("click", function()
-    //     {
-    //         console.log(filterClickBeerID);
-    //         //var rezultat1 = beers.filter(beer =>
-    //             //     {
-    //             //         let beerId = document.getElementById(beer.id);
-    //             //         if(beer.typeBeer == "Bottle")
-    //             //         {
-    //             //             beerId.classList.add("d-block");
-    //             //         }
-    //             //         else
-    //             //         {
-    //             //             beerId.classList.remove("d-block");
-    //             //             beerId.classList.add("d-none");
-    //             //         }
-    //     });
-    // }
-
-    // clickId0.addEventListener("click", function()
-    // {
-    //     var rezultat1 = beers.filter(beer =>
-    //     {
-    //         let beerId = document.getElementById(beer.id);
-    //         if(beer.typeBeer == "Bottle")
-    //         {
-    //             beerId.classList.add("d-block");
-    //         }
-    //         else
-    //         {
-    //             beerId.classList.remove("d-block");
-    //             beerId.classList.add("d-none");
-    //         }
-
-    //     });
-                
-                
-    //     // rezultat1.forEach((beer) => 
-    //     // {
-    //     //     let beerId = document.getElementById(beer.id);
-    //     //     if(rezultat1 == "Bottle")
-    //     //     {
-    //     //         beerId.classList.remove("d-block");
-    //     //         beerId.classList.add("d-none");
-    //     //     }
-    //     //     else
-    //     //     {
-    //     //         beerId.classList.add("d-block");
-    //     //     }
-    //     // })
-    //     console.log(rezultat1);
-    // })
-
-
     //Filtering by input
     var search = document.getElementById("search");
     search.addEventListener("input", () => 
@@ -664,21 +604,6 @@ $(document).ready(function()
         return false;
     });
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 
 function runEffect()
