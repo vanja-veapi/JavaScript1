@@ -730,7 +730,7 @@ function checkForm()
     let errAddress = document.getElementById("error-address")
     let address = document.getElementById("address");
 
-    let regExpAdr = /^[A-ZČĆŽŠĐ][a-zčćžšđ]{2,50}\s[1-9]{1,3}$/;
+    let regExpAdr = /[A-ZČĆŽŠĐ1-9]([a-zčćžšđ0-9]{2,80}\s)+[0-9A-Z]{1,4}$/;
 
     if(address.value === "")
     {
