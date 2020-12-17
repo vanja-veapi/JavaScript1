@@ -613,6 +613,10 @@ footer
     {
         font-size: 1.7rem;
     }
+    .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-draggable 
+    {
+        max-width: 80vw !important;
+    }
 }
 @media screen and (max-width: 310px)
 {
