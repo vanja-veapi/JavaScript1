@@ -127,6 +127,10 @@ li:hover
 {
     margin-left: -0.667%;
 }
+.no-close .ui-dialog-titlebar-close 
+{
+    display: none;
+}
 /* End of general */
 
 /* header tag */

@@ -509,12 +509,13 @@ $(document).ready(function()
         {
             console.log(typeof(beerCartCounter.value));
             var d = $('.dialog').dialog({
+                dialogClass: "no-close",
                 resizable: false
             });
-            // setTimeout(function()
-            // {
-            //     $('.dialog').dialog('close');                
-            // }, 2000);
+            setTimeout(function()
+            {
+                $('.dialog').dialog('close');                
+            }, 2000);
             let konverzija = Number(beerCartCounter.value);
             beerCartCounter.value = konverzija + 1;
         })
