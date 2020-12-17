@@ -508,6 +508,11 @@ $(document).ready(function()
         dugme[i].addEventListener("click", function()
         {
             console.log(typeof(beerCartCounter.value));
+            $('.dialog').dialog();
+            setTimeout(function()
+            {
+                $('.dialog').dialog('close');                
+            }, 2000);
             let konverzija = Number(beerCartCounter.value);
             beerCartCounter.value = konverzija + 1;
         })
@@ -603,7 +608,6 @@ $(document).ready(function()
         runEffect();
         return false;
     });
-    
 });
 
 function runEffect()
