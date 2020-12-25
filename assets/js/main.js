@@ -6,7 +6,7 @@ $(document).ready(function()
 
     let logo = document.querySelector("#logo"); //Fetch id logo with query selector
     let img = document.createElement("img"); //Making element img
-    img.setAttribute("alt", "Ovo je alt atribut iz javascripta"); //Setting attribute alt
+    img.setAttribute("alt", "Logo"); //Setting attribute alt
     img.setAttribute("src", "assets/img/krigla.png"); //Setting attribute src
     img.setAttribute("width", "60"); //Setting attribute width
     img.setAttribute("id", "logo-src");
